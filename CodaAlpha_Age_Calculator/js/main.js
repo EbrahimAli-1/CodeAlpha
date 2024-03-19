@@ -12,7 +12,7 @@ inputs.forEach((input) => {
   // Input.onblur
   input.onblur = function () {
     // Required Field
-    if (input.value !== "" || input.value == null) {
+    if (input.value !== "") {
       // Valid Range Date
       if (input.id == "day") {
         if (input.value < 1 || input.value > 31) {
@@ -23,7 +23,7 @@ inputs.forEach((input) => {
         } else {
           input.parentElement.children[2].textContent = "";
           input.parentElement.children[0].style.color = "#333";
-          input.style["border-color"] = "#eee";
+          input.style["border-color"] = "#bdbbbb";
           input.removeAttribute("error");
         }
       } else if (input.id == "month") {
@@ -35,7 +35,7 @@ inputs.forEach((input) => {
         } else {
           input.parentElement.children[2].textContent = "";
           input.parentElement.children[0].style.color = "#333";
-          input.style["border-color"] = "#eee";
+          input.style["border-color"] = "#bdbbbb";
           input.removeAttribute("error");
         }
       } else {
@@ -47,64 +47,67 @@ inputs.forEach((input) => {
         } else {
           input.parentElement.children[2].textContent = "";
           input.parentElement.children[0].style.color = "#333";
-          input.style["border-color"] = "#eee";
+          input.style["border-color"] = "#bdbbbb";
           input.removeAttribute("error");
         }
       }
-      // Invalid Future Date
+
       if (inputs[2].value == year) {
+        // Invalid Future Date
         if (inputs[1].value > month) {
           inputs[1].parentElement.children[2].textContent =
             "Must be a valid month";
           inputs[1].style["border-color"] = "#dd2117b5";
           inputs[1].parentElement.children[0].style.color = "#dd2117b5";
           inputs[1].setAttribute("error", "");
-        } else if (inputs[1].value == month) {
-          if (inputs[0].value > day) {
-            inputs[0].parentElement.children[2].textContent =
-              "Must be a valid day";
-            inputs[0].style["border-color"] = "#dd2117b5";
-            inputs[0].parentElement.children[0].style.color = "#dd2117b5";
-            inputs[0].setAttribute("error", "");
-          } else {
-            inputs[0].parentElement.children[2].textContent = "";
-            inputs[0].parentElement.children[0].style.color = "#333";
-            inputs[0].style["border-color"] = "#eee";
-            inputs[0].removeAttribute("error");
-          }
-        } else {
-          inputs[1].parentElement.children[2].textContent = "";
-          inputs[1].parentElement.children[0].style.color = "#333";
-          inputs[1].style["border-color"] = "#eee";
-          inputs[1].removeAttribute("error");
-        }
-      }
-      // Even Months
-      if (inputs[1].value % 2 == 0 && inputs[0].value > 30) {
-        if (!inputs[1].value == "") {
+        } else if (inputs[1].value == month && inputs[0].value > day) {
           inputs[0].parentElement.children[2].textContent =
             "Must be a valid day";
           inputs[0].style["border-color"] = "#dd2117b5";
           inputs[0].parentElement.children[0].style.color = "#dd2117b5";
           inputs[0].setAttribute("error", "");
+        } else {
+          inputs[0].parentElement.children[2].textContent = "";
+          inputs[0].parentElement.children[0].style.color = "#333";
+          inputs[0].style["border-color"] = "#bdbbbb";
+          inputs[0].removeAttribute("error");
         }
-      } else if (inputs[1].value == 2 && inputs[0].value > 29) {
-        // February
-        inputs[0].parentElement.children[2].textContent = "Must be a valid day";
-        inputs[0].style["border-color"] = "#dd2117b5";
-        inputs[0].parentElement.children[0].style.color = "#dd2117b5";
-        inputs[0].setAttribute("error", "");
       } else {
-        inputs[0].parentElement.children[2].textContent = "";
-        inputs[0].parentElement.children[0].style.color = "#333";
-        inputs[0].style["border-color"] = "#eee";
-        inputs[0].removeAttribute("error");
-        // Error Still Exists if input[month] has an error
-        if (inputs[1].value > 12 && inputs[0].value > 31) {
-        inputs[0].parentElement.children[2].textContent = "Must be a valid day";
-        inputs[0].style["border-color"] = "#dd2117b5";
-        inputs[0].parentElement.children[0].style.color = "#dd2117b5";
-        inputs[0].setAttribute("error", "");
+        // Even Months
+        if (inputs[1].value % 2 == 0 && inputs[0].value > 30) {
+          if (!inputs[1].value == "") {
+            inputs[0].parentElement.children[2].textContent =
+              "Must be a valid day";
+            inputs[0].style["border-color"] = "#dd2117b5";
+            inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+            inputs[0].setAttribute("error", "");
+          }
+        } else if (!inputs[1].value % 2 == 0 && inputs[0].value > 31) {
+          // Odd Months
+          inputs[0].parentElement.children[2].textContent =
+            "Must be a valid day";
+          inputs[0].style["border-color"] = "#dd2117b5";
+          inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+          inputs[0].setAttribute("error", "");
+        } else if (inputs[1].value == 2 && inputs[0].value > 29) {
+          // February
+          inputs[0].parentElement.children[2].textContent =
+            "Must be a valid day";
+          inputs[0].style["border-color"] = "#dd2117b5";
+          inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+          inputs[0].setAttribute("error", "");
+        } else {
+          inputs[0].parentElement.children[2].textContent = "";
+          inputs[0].parentElement.children[0].style.color = "#333";
+          inputs[0].style["border-color"] = "#bdbbbb";
+          inputs[0].removeAttribute("error");
+          if (!inputs[1].value > 12) {
+            inputs[0].parentElement.children[2].textContent =
+              "Must be a valid day";
+            inputs[0].style["border-color"] = "#dd2117b5";
+            inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+            inputs[0].setAttribute("error", "");
+          }
         }
       }
     } else {
