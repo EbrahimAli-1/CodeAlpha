@@ -25,7 +25,8 @@
 
 
 :root {
-  --main-color: #864cff;
+  --purple: hsl(259, 100%, 65%);
+  --red: hsl(0, 100%, 67%);
 }
 
 * {
@@ -97,12 +98,12 @@ input::-webkit-inner-spin-button {
 
 input:focus {
 outline: 0;
-border-color: var(--main-color);
+border-color: var(--purple);
 }
 
 input::selection {
   color: white;
-  background-color: var(--main-color);
+  background-color: var(--purple);
 }
 
 .button {
@@ -118,7 +119,7 @@ border: none;
 }
 
 svg {
-background-color: var(--main-color);
+background-color: var(--purple);
 padding: 20px;
 border-radius: 100%;
 cursor: pointer;
@@ -144,13 +145,13 @@ font-family: 'poppins-extraBoldItalic';
 }
 
 .burble {
-color: var(--main-color);
+color: var(--purple);
 }
 
 .required {
 font-family: 'poppins-italic';
 font-size: 14px;
-color: #dd2117b5;
+color: var(--red);
 margin-left: 3px;
 margin-top: 5px;
 }

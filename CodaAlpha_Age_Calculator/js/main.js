@@ -17,8 +17,8 @@ inputs.forEach((input) => {
       if (input.id == "day") {
         if (input.value < 1 || input.value > 31) {
           input.parentElement.children[2].textContent = "Must be a valid day";
-          input.style["border-color"] = "#dd2117b5";
-          input.parentElement.children[0].style.color = "#dd2117b5";
+          input.style["border-color"] = "var(--red)";
+          input.parentElement.children[0].style.color = "var(--red)";
           input.setAttribute("error", "");
         } else {
           input.parentElement.children[2].textContent = "";
@@ -29,8 +29,8 @@ inputs.forEach((input) => {
       } else if (input.id == "month") {
         if (input.value < 1 || input.value > 12) {
           input.parentElement.children[2].textContent = "Must be a valid month";
-          input.style["border-color"] = "#dd2117b5";
-          input.parentElement.children[0].style.color = "#dd2117b5";
+          input.style["border-color"] = "var(--red)";
+          input.parentElement.children[0].style.color = "var(--red)";
           input.setAttribute("error", "");
         } else {
           input.parentElement.children[2].textContent = "";
@@ -41,8 +41,8 @@ inputs.forEach((input) => {
       } else {
         if (input.value < 1 || input.value > year) {
           input.parentElement.children[2].textContent = "Must be a valid year";
-          input.style["border-color"] = "#dd2117b5";
-          input.parentElement.children[0].style.color = "#dd2117b5";
+          input.style["border-color"] = "var(--red)";
+          input.parentElement.children[0].style.color = "var(--red)";
           input.setAttribute("error", "");
         } else {
           input.parentElement.children[2].textContent = "";
@@ -57,14 +57,14 @@ inputs.forEach((input) => {
         if (inputs[1].value > month) {
           inputs[1].parentElement.children[2].textContent =
             "Must be a valid month";
-          inputs[1].style["border-color"] = "#dd2117b5";
-          inputs[1].parentElement.children[0].style.color = "#dd2117b5";
+          inputs[1].style["border-color"] = "var(--red)";
+          inputs[1].parentElement.children[0].style.color = "var(--red)";
           inputs[1].setAttribute("error", "");
         } else if (inputs[1].value == month && inputs[0].value > day) {
           inputs[0].parentElement.children[2].textContent =
             "Must be a valid day";
-          inputs[0].style["border-color"] = "#dd2117b5";
-          inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+          inputs[0].style["border-color"] = "var(--red)";
+          inputs[0].parentElement.children[0].style.color = "var(--red)";
           inputs[0].setAttribute("error", "");
         } else {
           inputs[0].parentElement.children[2].textContent = "";
@@ -78,23 +78,23 @@ inputs.forEach((input) => {
           if (!inputs[1].value == "") {
             inputs[0].parentElement.children[2].textContent =
               "Must be a valid day";
-            inputs[0].style["border-color"] = "#dd2117b5";
-            inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+            inputs[0].style["border-color"] = "var(--red)";
+            inputs[0].parentElement.children[0].style.color = "var(--red)";
             inputs[0].setAttribute("error", "");
           }
         } else if (!inputs[1].value % 2 == 0 && inputs[0].value > 31) {
           // Odd Months
           inputs[0].parentElement.children[2].textContent =
             "Must be a valid day";
-          inputs[0].style["border-color"] = "#dd2117b5";
-          inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+          inputs[0].style["border-color"] = "var(--red)";
+          inputs[0].parentElement.children[0].style.color = "var(--red)";
           inputs[0].setAttribute("error", "");
         } else if (inputs[1].value == 2 && inputs[0].value > 29) {
           // February
           inputs[0].parentElement.children[2].textContent =
             "Must be a valid day";
-          inputs[0].style["border-color"] = "#dd2117b5";
-          inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+          inputs[0].style["border-color"] = "var(--red)";
+          inputs[0].parentElement.children[0].style.color = "var(--red)";
           inputs[0].setAttribute("error", "");
         } else {
           inputs[0].parentElement.children[2].textContent = "";
@@ -104,15 +104,15 @@ inputs.forEach((input) => {
           if (!inputs[1].value > 12) {
             inputs[0].parentElement.children[2].textContent =
               "Must be a valid day";
-            inputs[0].style["border-color"] = "#dd2117b5";
-            inputs[0].parentElement.children[0].style.color = "#dd2117b5";
+            inputs[0].style["border-color"] = "var(--red)";
+            inputs[0].parentElement.children[0].style.color = "var(--red)";
             inputs[0].setAttribute("error", "");
           }
         }
       }
     } else {
-      input.style["border-color"] = "#dd2117b5";
-      input.parentElement.children[0].style.color = "#dd2117b5";
+      input.style["border-color"] = "var(--red)";
+      input.parentElement.children[0].style.color = "var(--red)";
       input.parentElement.children[2].textContent = "This field is required";
       input.setAttribute("error", "");
     }
@@ -123,8 +123,8 @@ button.onclick = function () {
   // if clicked without bluring the inputs
   inputs.forEach((e) => {
     if (e.value == "" || e.value == null) {
-      e.style["border-color"] = "#dd2117b5";
-      e.parentElement.children[0].style.color = "#dd2117b5";
+      e.style["border-color"] = "var(--red)";
+      e.parentElement.children[0].style.color = "var(--red)";
       e.parentElement.children[2].textContent = "This field is required";
       e.setAttribute("error", "");
     }
