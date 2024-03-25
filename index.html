@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/📆" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Age Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <div class="field">
+          <div class="input">
+            <label for="day">Day</label
+            ><input
+              type="number"
+              maxlength="2"
+              oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              name="day"
+              id="day"
+              error
+              placeholder="DD"
+            />
+            <span class="required"></span>
+          </div>
+          <div class="input">
+            <label for="month">Month</label
+            ><input
+              type="number"
+              maxlength="2"
+              oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              name="month"
+              id="month"
+              error
+              placeholder="MM"
+            />
+            <span class="required"></span>
+          </div>
+          <div class="input">
+            <label for="year">Year</label
+            ><input
+              type="number"
+              maxlength="4"
+              oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              name="year"
+              id="year"
+              placeholder="YYYY"
+              error
+            />
+            <span class="required"></span>
+          </div>
+        </div>
+        <div class="button">
+          <hr />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="65"
+            height="60"
+            viewBox="0 0 46 44"
+          >
+            <g fill="none" stroke="white" stroke-width="1.5">
+              <path
+                d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+              />
+            </g>
+          </svg>
+        </div>
+      </form>
+
+      <div class="age">
+        <div>
+          <h1 class="burble">--</h1>
+          <h1 id="years">years</h1>
+        </div>
+        <div>
+          <h1 class="burble">--</h1>
+          <h1 id="months">months</h1>
+        </div>
+        <div>
+          <h1 class="burble">--</h1>
+          <h1 id="days">days</h1>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
