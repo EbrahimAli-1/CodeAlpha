@@ -26,7 +26,8 @@
 
 :root {
   --purple: hsl(259, 100%, 65%);
-  --red: hsl(0, 100%, 67%);
+  --error: hsl(0, 100%, 67%);
+  --regular: #bdbbbb;
 }
 
 * {
@@ -84,7 +85,7 @@ font-family: 'poppins-bold';
 line-height: 1.65;
 display: block;
 padding: 10px 15px;
-border: 1px solid #bdbbbb;
+border: 1px solid var(--regular);
 margin-top: 5px;
 }
 
@@ -151,7 +152,7 @@ color: var(--purple);
 .required {
 font-family: 'poppins-italic';
 font-size: 14px;
-color: var(--red);
+color: var(--error);
 margin-left: 3px;
 margin-top: 5px;
 }
